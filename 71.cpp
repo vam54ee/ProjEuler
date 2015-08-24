@@ -111,7 +111,7 @@ if (i==3)
   //}
 }
 heapsort(arr,j);
-//for(int i=0;i<j;i++)
+for(int i=0;i<j;i++)
 //if(arr[i]==3.0/7)
 //{cout<<arr[i-1]<<"\t"<<narr[i-1]<<"\t"<<narr[j-2]<<"\t"<<narr[j-1];break;}
 cout<<narr[j-2]<<"\t"<<arr[j-2]<<endl;  

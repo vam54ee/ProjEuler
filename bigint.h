@@ -16,6 +16,7 @@ class BigInt
    BigInt(const int lli){for( int i=lli;i>0;i/=10)_s=(char)(i%10+'0')+_s;}
    BigInt(const BigInt& b){_s=b._s;}
    BigInt operator +(const BigInt);
+   BigInt operator -(const BigInt);
    BigInt operator =(const BigInt b){_s=b._s;return *this;};
    void operator +=(const BigInt b){_s=((*this)+b)._s;}
    BigInt operator *(const char);

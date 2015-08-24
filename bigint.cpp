@@ -29,6 +29,49 @@ BigInt BigInt::operator +(const BigInt b)
 }
 
 
+BigInt BigInt::operator -(const BigInt b)
+{
+	if(!(*this > b))
+		return BigInt("0");
+    int i,j,borrow=0;
+    string str;
+    for(i=_s.length()-1,j=b._s.length()-1;i>=0||j>=0;i--,j--)
+    {int a,d;
+    if(i<0&&j>=0)
+    {a=0;d=b._s[j]-'0';}
+    else if(j<0&&i>=0)
+    {d=0;a=_s[i]-'0';}
+    else
+    {a=_s[i]-'0';d=b._s[j]-'0';}
+    //cout<<i<<"\t"<<j<<"\t";
+	int c = 0;
+	if(borrow == 1)
+	{
+		a -= 1;
+		borrow = 0;
+	}
+	if(a < d)
+	{
+		borrow = 1;
+		c = a + 10 - d;
+	}
+	else
+	{
+		borrow = 0;
+		c = a - d;
+	}
+    
+    
+    str=(char)(c%10+'0')+str;
+    //cout<<a<<"\t"<<d<<"\t"<<c<<"\t"<<str<<"\t"<<borrow<<endl;
+    
+    }
+    BigInt ret = BigInt(str);
+	ret.removeFrontZeroes();
+  return ret;  
+}
+
+
 
 BigInt BigInt::operator *(const char c)
 {
