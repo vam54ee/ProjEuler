@@ -7,15 +7,27 @@ bool ispan(BigInt b,int c)
 	int a[]={0,0,0,0,0,0,0,0,0,0};
 	for(int i=0;i<9;i++)
 	{//cout<<(b[i]-'0')<<"\t"<<(b[b.noOfDigits()-i-1]-'0')<<endl;
-		a[b[i]-'0']++;
+		//a[b[i]-'0']++;
 		a[b[b.noOfDigits()-i-1]-'0']++;
 	}
 	for(int i=1;i<=9;i++)
 	{//cout<<a[i]<<"\t";
-		if(a[i]!=2)
+		if(a[i]!=1)
 			return false;
 	}
-	cout<<c;
+	int x[]={0,0,0,0,0,0,0,0,0,0};
+	for(int i=0;i<9;i++)
+	{//cout<<(b[i]-'0')<<"\t"<<(b[b.noOfDigits()-i-1]-'0')<<endl;
+		x[b[i]-'0']++;
+		//a[b[b.noOfDigits()-i-1]-'0']++;
+	}
+	for(int i=1;i<=9;i++)
+	{//cout<<a[i]<<"\t";
+		if(x[i]!=1)
+			return false;
+	}
+	
+	cout<<b<<endl<<c<<endl;
 	return true;
 }
 
